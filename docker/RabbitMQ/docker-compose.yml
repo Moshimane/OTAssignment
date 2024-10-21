@@ -1,0 +1,14 @@
+services:
+  rabbit:
+    container_name: dev_rabbit
+    hostname: rabbit
+    image: rabbitmq:4.0-management
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+networks:
+  rb-net:
+    driver: bridge
